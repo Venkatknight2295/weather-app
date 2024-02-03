@@ -55,9 +55,12 @@ function handleWeatherData(city, json) {
         weatherDetails.classList.add('active');
         error404.classList.remove('active');
 
+        // Comment out the following lines to remove the fade-out effect
+        
         setTimeout(() => {
             container.classList.remove('active');
-        }, 2500);
+        }, 50500);
+        
 
         switch (json.weather[0].main) {
             case 'Clear':
@@ -85,10 +88,13 @@ function handleWeatherData(city, json) {
         humidity.innerHTML = `${json.main.humidity}%`;
         wind.innerHTML = `${parseInt(json.wind.speed)}Km/h`;
 
+        // Comment out the following lines to remove the fade-out effect
+        
         weatherIcon.style.opacity = '1';
 
         setTimeout(() => {
             weatherIcon.style.opacity = '0';
-        }, 5000); // Change this duration to the desired time in milliseconds
+        }, 100000); // Change this duration to the desired time in milliseconds
+        
     }
 }
